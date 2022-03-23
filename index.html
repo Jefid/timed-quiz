@@ -14,9 +14,9 @@
 
 
     <header>
-        <div class="timerDisplay" >
-            <div class="timerText" id="countdown"> Time left: </div>
-            <div class="timerSec">60</div>
+        <div class="countDown" >
+            <div class="timerText"> Time left: <span id="counter"></span>
+             </div>
         </div>
 
         <div class="highScoreDisplay">
@@ -25,7 +25,7 @@
 
     </header>
 <!-- startscreen start -->
-<div class="startScreen">
+<div class="startScreen" id = "quizDirections">
     <section class="infoList">
         <div class="info">1. You have 1 minute to finish the quiz. </div>
         <div class="info">2. You will select one correct answer.</div>
@@ -38,12 +38,14 @@
 <!-- startscreen end -->
 
 <!-- quiz question start -->
-<section>
-    <h1 id="question"> </h1>
-    <button id="answer-1" ></button>
-    <button id="answer-2"></button>
-    <button id="answer-3"></button>
-    <button id="answer-4"></button>
+<section id="quizSection" class="invisible">
+    <h1 id="question"> Question </h1>
+    <div id="answers">
+    <button id="answer-1">Answer</button>
+    <button id="answer-2">Answer</button>
+    <button id="answer-3">Answer</button>
+    <button id="answer-4">Answer</button>
+</div>
 </section>
 <!-- quiz question end -->
 <script src="./develop/script.js" ></script>   
