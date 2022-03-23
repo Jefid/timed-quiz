@@ -29,8 +29,6 @@ var player = {};
 
 //displays question
 function showQuestion() {
-    console.log(document.getElementById("question").innerHTML);
-
     document.getElementById("question").innerHTML = (questions[questionLog].question);
     document.getElementById("answer-1").innerHTML = (questions[questionLog].answers[0]);
     document.getElementById("answer-2").innerHTML = (questions[questionLog].answers[1]);
@@ -42,7 +40,7 @@ function countdown() {
     document.getElementById("counter").innerHTML = (counter);
     timer = setInterval(function() {
         counter--;
-        getElementById("counter").text(counter);
+        document.getElementById("counter").innerHTML = counter;
         if (counter === 0) {
             clearInterval(timer);
             endGame();
@@ -51,8 +49,9 @@ function countdown() {
 }
 // //function to end quiz/ enter initials for score
 function endGame(){
-
+    
 }
+
 //funstion to start quiz
 function startGame(){
     var quizScreen= document.getElementById("quizSection");
@@ -60,7 +59,28 @@ function startGame(){
     quizInstructions.classList.add("invisible");
     quizScreen.classList.remove("invisible");
     showQuestion();
+   
 }
 
-//need to have a click event to check questions 
-document.getElementById("startButton").addEventListener("click", startGame);
+//click event to submit questions
+document.getElementById("answers").addEventListener("click", ".answer", function(){
+ if (this.innerHTML === questions[questionLog].correct){
+     //show correct on result
+ } else{
+     //show result incorrect
+     counter = (counter - 10);
+ }
+questionLog++;
+if(questionLog === questions.length){
+    endGame();
+}else {
+    showQuestion();
+}
+});
+
+
+
+
+//click event to start game
+document.getElementById("startButton").addEventListener("click", startGame,);
+document.getElementById("startButton").addEventListener("click", countdown,);
