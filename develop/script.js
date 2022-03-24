@@ -53,6 +53,7 @@ function endGame() {
   var quizScreen = document.getElementById("quizSection");
   var quizInstructions = document.getElementById("quizDirections");
   var timeLeft = document.getElementById("timerText");
+
   playerScore = counter;
   document.getElementsByClassName("countDown")
   quizInstructions.classList.add("invisible");
@@ -95,6 +96,8 @@ function toHighscoreList() {
 function startGame() {
   var quizScreen = document.getElementById("quizSection");
   var quizInstructions = document.getElementById("quizDirections");
+  var timerTime =  document.getElementById("timerText");
+  timerTime.classList.remove("invisible");
   quizInstructions.classList.add("invisible");
   quizScreen.classList.remove("invisible");
   quizScreen.classList.add("startScreen");
