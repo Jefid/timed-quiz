@@ -59,7 +59,7 @@ function startGame() {
 //click event to submit questions
 
 //currently will say incorrect every time
-document.getElementById("answers").addEventListener("click", function () {
+document.getElementById("answer-1").addEventListener("click", function () {
   if (this.textContent === questions[questionLog].correct) {
     console.log("correct");
     //show correct on result
@@ -75,6 +75,69 @@ document.getElementById("answers").addEventListener("click", function () {
     showQuestion();
   }
 });
+
+
+document.getElementById("answer-2").addEventListener("click", function () {
+  if (this.textContent === questions[questionLog].correct) {
+    console.log("correct");
+    //show correct on result
+  } else {
+    console.log("incorrect");
+    //show result incorrect
+    counter = counter - 10;
+  }
+  questionLog++;
+  if (questionLog === questions.length) {
+    endGame();
+  } else {
+    showQuestion();
+  }
+});
+
+
+
+
+document.getElementById("answer-3").addEventListener("click", function () {
+  if (this.textContent === questions[questionLog].correct) {
+    console.log("correct");
+    //show correct on result
+  } else {
+    console.log("incorrect");
+    //show result incorrect
+    counter = counter - 10;
+  }
+  questionLog++;
+  if (questionLog === questions.length) {
+    endGame();
+  } else {
+    showQuestion();
+  }
+});
+
+
+
+document.getElementById("answer-4").addEventListener("click", function () {
+  if (this.textContent === questions[questionLog].correct) {
+    console.log("correct");
+    //show correct on result
+  } else {
+    console.log("incorrect");
+    //show result incorrect
+    counter = counter - 10;
+  }
+  questionLog++;
+  if (questionLog === questions.length) {
+    endGame();
+  } else {
+    showQuestion();
+  }
+});
+
+
+
+
+
+
 
 //click event to start game
 document.getElementById("startButton").addEventListener("click", startGame);
