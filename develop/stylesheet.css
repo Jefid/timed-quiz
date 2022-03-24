@@ -97,3 +97,13 @@ header {
   border-radius: 15px;
 
 }
+
+.leaderBoard {
+  text-align: center;
+  display:flex;
+  background-color: var(--third-color);
+  flex-direction: column;
+  color: var(--first-color);
+  padding: 100px;
+  justify-content: space-between;
+}
