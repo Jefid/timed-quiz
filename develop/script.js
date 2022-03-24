@@ -12,12 +12,16 @@ var questions = [
   { question: "Question #5: Upon encountering empty statements, what does the Javascript Interpreter do?", answers: ["Throws an error", "Ignores the statements", "Gives a warning", "None of the above"], correct: "Ignores the statements" },
 ];
 
+var highscoreList = [];
+var gameResult = {};
 var questionLog = 0;
 var playerScore = 0;
 var timer,
   counter = 60;
 var player = {};
 var playerName = "";
+
+
 
 //displays question
 function showQuestion() {
@@ -63,19 +67,28 @@ function endGame() {
 //  var highScore = localStorage.setItem(playerScore = highScore);
  
 //  console.log(playerScore);
-// var playerName = window.prompt("WOULD YOU LIKE TO SAVE YOUR SCORE? ENTER YOUR INITALS IF SO!");
-// if (!playerName){
-//   window.alert("NO WORRIES! TRY AGAIN?");
-//   window.location.reload();
-// } else {
-//   window.alert("SAVING YOUR SCORE!")
-//   highScore=playerScore;
-//   document.getElementById("result").innerHTML = ("HIGHSCORE LIST:\n" + playerName + " " + playerScore);
-//   console.log(playerName);
-//   console.log(highScore);
-// }
+var playerNameEnter = window.prompt("WOULD YOU LIKE TO SAVE YOUR SCORE? ENTER YOUR INITALS IF SO!");
+if (!playerNameEnter){
+window.alert("NO WORRIES! TRY AGAIN?");
+window.location.reload();
+} else {
+window.alert("SAVING YOUR SCORE!")
+highScore=playerScore;
+playerName= playerNameEnter;
+
+toHighscoreList();
+document.getElementById("result").innerHTML = ("HIGHSCORE LIST:\n" + playerName + " " + playerScore);
+console.log(playerName);
+console.log(highScore);
+console.log(gameResult.player);
+console.log(gameResult.score);
+ }
 
 }
+
+function toHighscoreList() {
+  gameResult = {player: playerName, score: playerScore};
+};
 
 //funstion to start quiz
 function startGame() {
