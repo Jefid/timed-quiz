@@ -95,11 +95,8 @@ function toHighscoreList() {
 function startGame() {
   var quizScreen = document.getElementById("quizSection");
   var quizInstructions = document.getElementById("quizDirections");
-  var quizTimer = document.getElementById("timerText");
-
   quizInstructions.classList.add("invisible");
   quizScreen.classList.remove("invisible");
-  quizTimer.classList.remove("invisible");
   quizScreen.classList.add("startScreen");
   showQuestion();
 }
