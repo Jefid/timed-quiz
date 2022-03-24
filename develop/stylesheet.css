@@ -24,6 +24,7 @@ body {
   color: var(--first-color);
   padding: 100px;
   justify-content: space-between;
+
 }
 
 .highScoreDisplay {
@@ -62,6 +63,8 @@ header {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 15px;
+
 } 
 
 .invisible {
@@ -86,9 +89,11 @@ header {
   background-color: var(--second-color); 
   justify-content: space-between;
   border: none;
-  color: white;
+  color: var(--first-color);
   padding: 15px 32px;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 15px;
+
 }

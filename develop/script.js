@@ -17,6 +17,7 @@ var playerScore = 0;
 var timer,
   counter = 60;
 var player = {};
+var playerName = "";
 
 //displays question
 function showQuestion() {
@@ -55,6 +56,24 @@ function endGame() {
   document.getElementById("result").innerHTML = ("YOU SCORED " + playerScore + "!");
   timeLeft.classList.add("invisible");
   
+
+
+  // Highscore currently not wworking
+//  // check localStorage for high score, if it's not there, use 0
+//  var highScore = localStorage.setItem(playerScore = highScore);
+ 
+//  console.log(playerScore);
+// var playerName = window.prompt("WOULD YOU LIKE TO SAVE YOUR SCORE? ENTER YOUR INITALS IF SO!");
+// if (!playerName){
+//   window.alert("NO WORRIES! TRY AGAIN?");
+//   window.location.reload();
+// } else {
+//   window.alert("SAVING YOUR SCORE!")
+//   highScore=playerScore;
+//   document.getElementById("result").innerHTML = ("HIGHSCORE LIST:\n" + playerName + " " + playerScore);
+//   console.log(playerName);
+//   console.log(highScore);
+// }
 
 }
 
