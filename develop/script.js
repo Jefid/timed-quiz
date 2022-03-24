@@ -44,7 +44,19 @@ function countdown() {
   }, 1000);
 }
 // //function to end quiz/ enter initials for score
-function endGame() {}
+function endGame() {
+  var quizScreen = document.getElementById("quizSection");
+  var quizInstructions = document.getElementById("quizDirections");
+  var timeLeft = document.getElementById("timerText");
+  playerScore = counter;
+  document.getElementsByClassName("countDown")
+  quizInstructions.classList.add("invisible");
+  quizScreen.classList.add("invisible");
+  document.getElementById("result").innerHTML = ("YOU SCORED " + playerScore + "!");
+  timeLeft.classList.add("invisible");
+  
+
+}
 
 //funstion to start quiz
 function startGame() {
@@ -56,16 +68,19 @@ function startGame() {
   showQuestion();
 }
 
-//click event to submit questions
 
-//currently will say incorrect every time
+
+//click events to submit questions start
 document.getElementById("answer-1").addEventListener("click", function () {
   if (this.textContent === questions[questionLog].correct) {
     console.log("correct");
     //show correct on result
+    document.getElementById("result").innerHTML ="CORRECT!"
   } else {
     console.log("incorrect");
     //show result incorrect
+    document.getElementById("result").innerHTML ="INCORRECT!"
+
     counter = counter - 10;
   }
   questionLog++;
@@ -81,9 +96,11 @@ document.getElementById("answer-2").addEventListener("click", function () {
   if (this.textContent === questions[questionLog].correct) {
     console.log("correct");
     //show correct on result
+    document.getElementById("result").innerHTML ="CORRECT!"
   } else {
     console.log("incorrect");
     //show result incorrect
+    document.getElementById("result").innerHTML ="INCORRECT!"
     counter = counter - 10;
   }
   questionLog++;
@@ -101,9 +118,12 @@ document.getElementById("answer-3").addEventListener("click", function () {
   if (this.textContent === questions[questionLog].correct) {
     console.log("correct");
     //show correct on result
+    document.getElementById("result").innerHTML ="CORRECT!"
   } else {
     console.log("incorrect");
     //show result incorrect
+    document.getElementById("result").innerHTML ="INCORRECT!"
+
     counter = counter - 10;
   }
   questionLog++;
@@ -120,9 +140,12 @@ document.getElementById("answer-4").addEventListener("click", function () {
   if (this.textContent === questions[questionLog].correct) {
     console.log("correct");
     //show correct on result
+    document.getElementById("result").innerHTML ="CORRECT!"
   } else {
     console.log("incorrect");
     //show result incorrect
+    document.getElementById("result").innerHTML ="INCORRECT!"
+
     counter = counter - 10;
   }
   questionLog++;
@@ -133,7 +156,7 @@ document.getElementById("answer-4").addEventListener("click", function () {
   }
 });
 
-
+//click events to check answers end
 
 
 
