@@ -1,21 +1,61 @@
+:root {
+  --first-color: #ffdccc;
+  --second-color: #023e8a;
+  --third-color: #03045e;
+}
+
+
 body {
   font-size: x-large;
 }
-/* 
+
 .startScreen {
+  text-align: center;
+  display:flex;
+  background-color: var(--third-color);
+  flex-direction: column;
+  color: var(--first-color);
+  padding: 100px;
+  justify-content: space-between;
+}
+
+.highScoreDisplay {
+  float: left;
 }
 
 .timerDisplay {
+  float: right;
 }
 
 .infoList {
+  text-align: center;
+  display:flex;
+  background-color: var(--third-color);
+  flex-direction: column;
+  color: var(--first-color);
+  padding: 100px;
+  justify-content: space-between;
 }
 
-.header {
+header {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--third-color);
+  color: var(--first-color);
+  padding: 50px;
 }
 
-.startButton {
-} */
+.quizButton {
+  max-width: 100px;
+  align-self: center;
+  background-color: var(--second-color); 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+} 
 
 .invisible {
   display: none;

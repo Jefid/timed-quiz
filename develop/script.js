@@ -1,15 +1,15 @@
 //array of objects storing questions and answers
 
 var questions = [
-  { question: "Question #1", answers: ["a", "b", "c", "d"], correct: "a" },
+  { question: "Question #1: Javascript is an _______ language?", answers: ["Object-Oriented", "Object-Based", "Procedural", "None of the above"], correct: "Object-Oriented" },
 
-  { question: "Question #2", answers: ["A", "B", "C", "D"], correct: "B" },
+  { question: "Question #2: Which of the following keywords is used to define a variable in Javascript?", answers: ["var", "let", "Both A and B", "None of the above"], correct: "Both A and B" },
 
-  { question: "Question #3", answers: ["a", "b", "c", "d"], correct: "c" },
+  { question: "Question #3: Which of the following methods is used to access HTML elements using Javascript?", answers: ["getElementbdId()", "getElementsByClassName()", "Both A and B", "None of the above"], correct: "Both A and B" },
 
-  { question: "Question #4", answers: ["a", "b", "c", "d"], correct: "c" },
+  { question: "Question #4: Which of the following methods can be used to display data in some form using Javascript?", answers: ["document.write()", "console.log()", "window.alert()", "All of the above"], correct: "All of the above" },
 
-  { question: "Question #5", answers: ["a", "b", "c", "d"], correct: "d" },
+  { question: "Question #5: Upon encountering empty statements, what does the Javascript Interpreter do?", answers: ["Throws an error", "Ignores the statements", "Gives a warning", "None of the above"], correct: "Ignores the statements" },
 ];
 
 var questionLog = 0;
@@ -52,6 +52,7 @@ function startGame() {
   var quizInstructions = document.getElementById("quizDirections");
   quizInstructions.classList.add("invisible");
   quizScreen.classList.remove("invisible");
+  quizScreen.classList.add("startScreen");
   showQuestion();
 }
 
