@@ -88,6 +88,7 @@ console.log(gameResult.score);
 
 function toHighscoreList() {
   gameResult = {player: playerName, score: playerScore};
+  player = gameResult;
 };
 
 //funstion to start quiz
