@@ -20,7 +20,7 @@ var timer,
   counter = 60;
 var player = {};
 var playerName = "";
-
+var trackEndGame = 0;
 
 
 //displays question
@@ -41,8 +41,10 @@ function countdown() {
   document.getElementById("counter").innerHTML = counter;
   timer = setInterval(function () {
     counter--;
+    //displaying timer in console to check bugs
+    console.log(counter);
     document.getElementById("counter").innerHTML = counter;
-    if (counter === 0) {
+    if (counter === 0 && trackEndGame === 0) {
       clearInterval(timer);
       endGame();
     }
@@ -53,7 +55,7 @@ function endGame() {
   var quizScreen = document.getElementById("quizSection");
   var quizInstructions = document.getElementById("quizDirections");
   var timeLeft = document.getElementById("timerText");
-
+  trackEndGame = 1;
   playerScore = counter;
   document.getElementsByClassName("countDown")
   quizInstructions.classList.add("invisible");
@@ -83,6 +85,10 @@ console.log(playerName);
 console.log(highScore);
 console.log(gameResult.player);
 console.log(gameResult.score);
+
+
+document.getElementById("highscoreButton").classList.remove("invisible");
+document.getElementById("leaderBoard").addEventListener("click", startNewGame());
  }
 
 }
