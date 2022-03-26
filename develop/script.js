@@ -122,7 +122,6 @@ document.getElementById("answer-1").addEventListener("click", function () {
     console.log("incorrect");
     //show result incorrect
     document.getElementById("result").innerHTML ="INCORRECT!"
-
     counter = counter - 10;
   }
   questionLog++;
@@ -197,6 +196,12 @@ document.getElementById("answer-4").addEventListener("click", function () {
     showQuestion();
   }
 });
+
+
+
+
+
+
 
 //click events to check answers end
 

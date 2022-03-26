@@ -96,8 +96,8 @@ header {
   font-size: 16px;
   border-radius: 15px;
 
-}
-
+ }
+ 
 .leaderBoard {
   text-align: center;
   display:flex;
@@ -106,4 +106,4 @@ header {
   color: var(--first-color);
   padding: 100px;
   justify-content: space-between;
-}
+} 
