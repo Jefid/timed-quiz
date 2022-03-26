@@ -12,6 +12,7 @@ var questions = [
   { question: "Question #5: Upon encountering empty statements, what does the Javascript Interpreter do?", answers: ["Throws an error", "Ignores the statements", "Gives a warning", "None of the above"], correct: "Ignores the statements" },
 ];
 
+
 var highscoreList = [];
 var gameResult = {};
 var questionLog = 0;
@@ -42,7 +43,7 @@ function countdown() {
   timer = setInterval(function () {
     counter--;
     //displaying timer in console to check bugs
-    console.log(counter);
+    //console.log(counter);
     document.getElementById("counter").innerHTML = counter;
     if (counter === 0 && trackEndGame === 0) {
       clearInterval(timer);
@@ -50,6 +51,9 @@ function countdown() {
     }
   }, 1000);
 }
+
+
+
 // //function to end quiz/ enter initials for score
 function endGame() {
   var quizScreen = document.getElementById("quizSection");
@@ -63,8 +67,6 @@ function endGame() {
   document.getElementById("result").innerHTML = ("YOU SCORED " + playerScore + "!");
   timeLeft.classList.add("invisible");
   
-
-
   // Highscore currently not wworking
 //  // check localStorage for high score, if it's not there, use 0
 //  var highScore = localStorage.setItem(playerScore = highScore);
@@ -76,26 +78,66 @@ window.alert("NO WORRIES! TRY AGAIN?");
 window.location.reload();
 } else {
 window.alert("SAVING YOUR SCORE!")
-highScore=playerScore;
+// highScore=playerScore;
 playerName= playerNameEnter;
 
 toHighscoreList();
 document.getElementById("result").innerHTML = ("HIGHSCORE LIST:\n" + playerName + " " + playerScore);
-console.log(playerName);
-console.log(highScore);
-console.log(gameResult.player);
-console.log(gameResult.score);
+// console logging to check that object is working
+// console.log(playerName);
+// console.log(highScore);
 
 
 document.getElementById("highscoreButton").classList.remove("invisible");
-document.getElementById("leaderBoard").addEventListener("click", startNewGame());
+//document.getElementById("highscoreButton").addEventListener("click", startNewGame());
  }
 
 }
+//starts new game after quiz is over still work in progress
+function startNewGame(){
+  location.reload()
+  // var startButt = document.getElementById("startButton");
+  // var quizInstructions = document.getElementById("quizDirections");
+  // var timerTime =  document.getElementById("timerText");
+
+  // timerTime.classList.add("invisible");
+  // quizInstructions.classList.remove("invisible");
+  // startButt.classList.remove("invisible");
+  // quizScreen.classList.add("startScreen");
+
+  // gameResult = {};
+  // questionLog = 0;
+  // playerScore = 0;
+  // player = {};
+  // playerName = "";
+  // trackEndGame = 0;
+  // function resetTimer(){
+  //   timer = 60;
+  //   counter = 60;
+  //   countdown();
+  //}
+
+  //document.getElementById("startButton").addEventListener("click", startGame);
+  // document.getElementById("startButton").addEventListener("click", countdown);
+  //document.getElementById("startButton").addEventListener("click", resetTimer);
+}
+
 
 function toHighscoreList() {
-  gameResult = {player: playerName, score: playerScore};
-  player = gameResult;
+  gameResult = {playerId: playerName, score: playerScore};
+   player = gameResult;
+   highscoreList.push(gameResult);
+   
+  for (i= 0; i < highscoreList.length; i++){
+    // highscoreList.push(gameResult);
+
+     console.log(highscoreList);
+     console.log(player);
+     console.log(gameResult);
+     console.log(playerName);
+     console.log(playerScore);
+    }
+
 };
 
 //funstion to start quiz
