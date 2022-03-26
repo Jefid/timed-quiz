@@ -12,8 +12,8 @@ var questions = [
   { question: "Question #5: Upon encountering empty statements, what does the Javascript Interpreter do?", answers: ["Throws an error", "Ignores the statements", "Gives a warning", "None of the above"], correct: "Ignores the statements" },
 ];
 
-
-var highscoreList = [];
+var highscoreListLocal = [];
+let highscoreList = [];
 var gameResult = {};
 var questionLog = 0;
 var playerScore = 0;
@@ -82,8 +82,12 @@ window.alert("SAVING YOUR SCORE!")
 playerName= playerNameEnter;
 
 toHighscoreList();
-document.getElementById("result").innerHTML = ("HIGHSCORE LIST:\n" + playerName + " " + playerScore);
-// console logging to check that object is working
+document.getElementById("result").innerHTML = ("HIGHSCORE LIST:\n" + playerName + " " + playerScore + highscoreListLocal);
+console.log(highscoreListLocal);
+// let text = localStorage.getItem("highscoreList") || [];
+//     var highscoreListLocal = JSON.parse(text);
+//     document.getElementById("leaderBoard").innerHTML = highscoreListLocal.name;
+// // console logging to check that object is working
 // console.log(playerName);
 // console.log(highScore);
 
@@ -127,16 +131,24 @@ function toHighscoreList() {
   gameResult = {playerId: playerName, score: playerScore};
    player = gameResult;
    highscoreList.push(gameResult);
-   
-  for (i= 0; i < highscoreList.length; i++){
-    // highscoreList.push(gameResult);
 
+   // SAVES TO HIGHSCORE LIST IN LOCAL STORAGE!!!
+   var myObj = highscoreList;
+   var myJSON = JSON.stringify(myObj);
+   localStorage.setItem("highscoreList", myJSON);
+   
+    // Retrieving data: STILL NEED TO FIX
+   // need to figure out how to make "leaderBoard text to show my local storage of highscores"
+    let text = localStorage.getItem("highscoreList");
+     highscoreListLocal = JSON.parse(text);
+   
+  
      console.log(highscoreList);
      console.log(player);
      console.log(gameResult);
      console.log(playerName);
      console.log(playerScore);
-    }
+  
 
 };
 
