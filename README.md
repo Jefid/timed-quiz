@@ -6,7 +6,7 @@ A website that uses Javascript to present the user with a timed quiz on Javascri
 ## Preview
 Here is a mock-up of how the page looks and functions.
 
-<img src=./develop/README.png></img>
+<img src=./develop/README.jpg></img>
 
 ## Built With
 * HTML
