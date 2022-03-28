@@ -13,7 +13,7 @@ Here is a mock-up of how the page looks and functions.
 * CSS
 * Javascript
 
-### This project was built to highlight skills learned in advanced CSS. 
+### This project was built to highlight skills learned in Javascript and Local Storage
 Thanks for looking!
 
 ## Website
